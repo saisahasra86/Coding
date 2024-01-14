@@ -1,0 +1,29 @@
+tokens=["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+stack=[]
+i=0
+while i<len(tokens):
+    if(tokens[i]=='+'):
+        f=stack.pop()
+        s=stack.pop()
+        stack.append(int(f)+int(s))
+        print(stack)
+    elif(tokens[i]=='*'):
+        f=stack.pop()
+        s=stack.pop()
+        stack.append(int(f)*int(s))
+        print(stack)
+    elif(tokens[i]=='/'):
+        f=stack.pop()
+        s=stack.pop()
+        stack.append(int(s)//int(abs(f)))
+        print(stack)
+    elif(tokens[i]=='-'):
+        f=stack.pop()
+        s=stack.pop()
+        stack.append(int(s)-int(f))
+        print(stack)
+    else:
+        stack.append(tokens[i])
+    i+=1
+print(stack.pop())
+print(6//132)
